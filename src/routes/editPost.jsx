@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 
 const editPost = () => {
     const {id} = useParams();
-    const [post, setPost] = useState({title: '', content: '', add_url: ''});
+    const [post, setPost] = useState({post_title: '', post_content: '', add_url: ''});
 
     useEffect(() => {
         const getPost = async () => {
@@ -13,7 +13,7 @@ const editPost = () => {
             .select()
             .eq('id', id);
             console.log(data[0]);
-            setPost({title: data[0].title, content: data[0].content, add_url: data[0].add_url});
+            setPost({post_title: data[0].post_title, post_content: data[0].post_content, add_url: data[0].add_url});
         }
         getPost();
     }, [])
@@ -32,13 +32,13 @@ const editPost = () => {
     const updatePost = async (event) => {
         event.preventDefault();
 
-        if(post.title != '') {
+        if(post.post_title != '') {
             event.preventDefault();
             await supabase
             .from('Posts')
-            .update({ title: post.title, content: post.content,  add_url: post.add_url})
+            .update({ post_title: post.post_title, post_content: post.post_content,  add_url: post.add_url})
             .eq('id', id);
-            window.location = "/postDeatils/"+id;
+            window.location = "/postDetails/"+id;
         }
         else{
             alert('Please enter a title');
@@ -52,21 +52,20 @@ const editPost = () => {
 
                 <div className="form_item">
                     <label for="title">Title</label> <span className="form_tag">(Required)</span>
-                    <input className="textbox" type="text" name="title" value={post.title} onChange={handleChange}  required />
+                    <input className="textbox" type="text" name="post_title" value={post.post_title} onChange={handleChange}  required />
                 </div>
 
                 <div className="form_item">
                     <label for="content">Content</label><br />
-                    <textarea className="post_content_input" rows="5" cols="50" id="content" name="content" value={post.content} oncChange={handleChange}/>
+                    <textarea className="post_content_input" rows="5" cols="50" id="content" name="post_content" value={post.post_content} onChange={handleChange}/>
                 </div>
 
                 <div className="form_item">
                     <label for="add_url">Add an URL</label><br />
                     <input className="textbox" type="text" id="add_url" name="add_url" value={post.add_url} onChange={handleChange} />
                 </div>
-
-                <button type="submit" onClick={updatePost} className="create_edit_post_btn">Save Edits</button>
             </form>
+            <button type="submit" onClick={updatePost} className="create_edit_post_btn">Save Edits</button>
         </div>
     );
 };

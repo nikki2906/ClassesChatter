@@ -4,9 +4,11 @@ const NavBar = () => {
     return (
         <div>
             <div className='navigation'>
-                <Link to='/' className='nav_link'>ClassesChatter 🍎</Link>
+                <Link to="/">
+                    <h2 className='nav_element'>ClassesChatter 🍎</h2>
+                </Link>
                 <Link to='/createPost'>
-                    <h4 className='element'>📚 Create Post!</h4>
+                    <h4 className='nav_element'>🖌️ Create Post!</h4>
                 </Link>
             </div>
             <Outlet/>
