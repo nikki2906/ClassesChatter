@@ -43,8 +43,8 @@ const createPost = () => {
                 </div>
 
                 <div className="form_item">
-                    <label htmlFor="content">Content</label><br />
-                    <textarea className="post_content_input" rows="5" cols="50" id="content" name="content" value={post.post_content} onChange={handleChange}/>
+                    <label for="content">Content</label><br />
+                    <textarea className="post_content_input" rows="5" cols="50" id="content" name="post_content" value={post.post_content} onChange={handleChange}/>
                 </div>
 
                 <div className="form_item">
