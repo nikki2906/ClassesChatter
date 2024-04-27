@@ -41,7 +41,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-(Video Walkthrough)[https://imgur.com/a/FwsIY7t]
+[Video Walkthrough](https://imgur.com/a/FwsIY7t)
 ## Notes
 
 Describe any challenges encountered while building the app.
