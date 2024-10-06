@@ -1,10 +1,6 @@
 # Web Development Final Project - *ClassesChatter*
 
-Submitted by: **Nhi Huynh**
-
 This web app: **This course-centric forum empowers students to discuss all aspects of classes. Users can view existing threads, create new posts, edit or delete their contributions, and upvote a post. Additionally, the forum fosters engagement through commenting and allows for efficient searching by popularity, date posted, or title keyword.**
-
-Time spent: **14** hours spent in total
 
 ## Required Features
 
